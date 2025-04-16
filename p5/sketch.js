@@ -17,7 +17,7 @@ function windowResized() {
   resizeCanvas(parentElement.offsetWidth, parentElement.offsetHeight);
 }
 function draw() {
-  background(255,200,0);
+  background(255, 200, 255);
 
   let gridSize = 20;
   let t = millis() * 0.0005;
