@@ -3829,6 +3829,7 @@ textarea.form-control-lg {
 }
 
 .navbar {
+  font-family: HelveticaNeue-Bold, sans-serif;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);
