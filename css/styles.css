@@ -27,6 +27,18 @@
 
  
 :root {
+/*! Paleta Maix  */
+    --color-maix-primary: #CC9921;
+    --color-maix-secondary: #CC5A71;
+    --color-maix-tertiary: #80475E;
+    --color-maix-dark: #34344A;
+    --color-maix-text: #FFFFFF;
+    --color-maix-primary-rgb: 204, 153, 33;
+    --color-maix-secondary-rgb: 204, 90, 113;
+    --color-maix-tertiary-rgb: 128, 71, 94;
+    --color-maix-dark-rgb: 52, 52, 74;
+    --color-maix-text-rgb: 255, 255, 255;
+/*! */
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #7464a1;
@@ -2890,10 +2902,10 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #cc9921;
-    --bs-btn-border-color: #cc9921;
+    --bs-btn-bg: var(--color-maix-secondary);
+    --bs-btn-border-color: var(--color-maix-secondary);
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #fd7e14;
+    --bs-btn-hover-bg: var(--color-maix-tertiary);
     --bs-btn-hover-border-color: #50817e;
     --bs-btn-focus-shadow-rgb: 123, 175, 172;
     --bs-btn-active-color: #fff;
@@ -3738,7 +3750,7 @@ textarea.form-control-lg {
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: 1.5rem;;
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  color: var(--color-maix-tertiary);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3748,7 +3760,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: var(--bs-nav-link-hover-color);
+  color: var(--color-maix-primary);
 }
 .nav-link.disabled {
   color: var(--bs-nav-link-disabled-color);
@@ -3844,7 +3856,7 @@ textarea.form-control-lg {
   font-family: HelveticaNeue-Bold, sans-serif;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(0, 0, 0, 1);
+  --bs-navbar-color: rgb(0, 0, 0);
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
@@ -8361,24 +8373,25 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-yellow {
+
+.bg-maix-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(204, 153, 33, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-lavander {
+.bg-maix-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(119, 118, 188, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-candy {
+.bg-maix-tertiary {
   --bs-bg-opacity: 1;
-  background-color: rgba(229, 79, 109, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-tertiary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-tile {
+.bg-maix-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(128, 222, 217, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-white {
@@ -11051,14 +11064,14 @@ body {
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #cc9921;
-  border: 1px solid #cc9921;
+  color: rgba(var(--color-maix-tertiary-rgb));
+  border: 1px solid rgba(var(--color-maix-tertiary-rgb));
 }
 #mainNav .navbar-toggler:focus {
   outline: none;
 }
 #mainNav .navbar-brand {
-  color: #000;
+  color: rgba(var(--color-maix-secondary-rgb),1);
   font-weight: 700;
   padding: 0.9rem 0;
 }
@@ -11081,29 +11094,29 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: #000000;
+    color: rgba(var(--color-maix-tertiary-rgb),1);
     font: "HelveticaNeue-Bold";
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: #000000;
+    color: rgba(var(--color-maix-dark-rgb), 1);
   }
   #mainNav .nav-link:hover {
-    color: #000000;
+    color: rgba(var(--color-maix-text-rgb),1);
     font: "HelveticaNeue-Bold";
   }
   #mainNav .nav-link:active {
-    color: #fff;
+    color: rgba(var(--color-maix-primary-rgb),1);
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #000;
+    color: rgba(var(--color-maix-secondary-rgb),1));
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #000;
+    color: rgba(var(--color-maix-dark-rgb), 1);
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
