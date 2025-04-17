@@ -11195,10 +11195,14 @@ body {
   }
 }
 
+.about-section-gradient{
+  background: linear-gradient(0deg,rgba(204, 153, 33, 1) 0%, rgba(123, 77, 255, 1) 100%);
+}
+
 .about-section {
   padding-top: 3ch;
   padding-bottom: 3rem;
-  background: linear-gradient(0deg,rgba(204, 153, 33, 1) 0%, rgba(123, 77, 255, 1) 100%);
+  
 }
 .about-section p {
   margin-bottom: 5rem;
