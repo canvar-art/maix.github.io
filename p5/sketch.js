@@ -17,7 +17,7 @@ function windowResized() {
   resizeCanvas(parentElement.offsetWidth, parentElement.offsetHeight);
 }
 function draw() {
-  background(255, 200, 255);
+  background(151, 118, 195);
 
   let gridSize = 20;
   let t = millis() * 0.0005;
@@ -33,7 +33,7 @@ function draw() {
       let g = map(mouseY, 0, height, 100, 255);
       let b = map(n, 0, 1, 100, 255);
 
-      fill(r, g, b, 200);
+      fill(r, g, b, 150);
       let ellipseSize = map(n, 0, 1, 10, 35,0);
       ellipse(x, y, ellipseSize, ellipseSize);
     }
