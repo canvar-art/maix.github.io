@@ -2800,6 +2800,16 @@ textarea.form-control-lg {
   z-index: 4;
 }
 
+.neon-text {
+  color: #ff0080; /* Dark pink */
+  text-align: center;
+  font-weight: bold;
+  text-shadow:
+    0 0 2px #ff0080,
+    0 0 6px #ff1a8c,
+    0 0 12px #ff1a8c;
+}
+
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
@@ -2995,11 +3005,13 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #000;
   --bs-btn-disabled-bg: #f8f9fa;
   --bs-btn-disabled-border-color: #f8f9fa;
+  --bs-btn-font-size: 50%;
+  --bs-btn-font-weight:50%;
 }
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
+  --bs-btn-bg: #303b45;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #424649;
