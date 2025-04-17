@@ -27,6 +27,18 @@
 
  
 :root {
+/*! Paleta Maix  */
+    --color-maix-primary: #CC9921;
+    --color-maix-secondary: #CC5A71;
+    --color-maix-tertiary: #80475E;
+    --color-maix-dark: #34344A;
+    --color-maix-text: #FFFFFF;
+    --color-maix-primary-rgb: 204, 153, 33;
+    --color-maix-secondary-rgb: 204, 90, 113;
+    --color-maix-tertiary-rgb: 128, 71, 94;
+    --color-maix-dark-rgb: 52, 52, 74;
+    --color-maix-text-rgb: 255, 255, 255;
+/*! */
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #7464a1;
@@ -8349,24 +8361,25 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-yellow {
+
+.bg-maix-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(204, 153, 33, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-lavander {
+.bg-maix-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(119, 118, 188, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-candy {
+.bg-maix-tertiary {
   --bs-bg-opacity: 1;
-  background-color: rgba(229, 79, 109, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-tertiary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-maix-tile {
+.bg-maix-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(128, 222, 217, var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--color-maix-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-white {
@@ -11075,14 +11088,14 @@ body {
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: #000000;
+    color: rgba(var(--color-maix-dark-rgb), 1);
   }
   #mainNav .nav-link:hover {
-    color: #000000;
+    color: rgba(var(--color-maix-secondary-rgb),1);
     font: "HelveticaNeue-Bold";
   }
   #mainNav .nav-link:active {
-    color: #fff;
+    color: rgba(var(--color-maix-primary-rgb),1);
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
