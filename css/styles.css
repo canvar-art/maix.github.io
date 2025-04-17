@@ -634,6 +634,10 @@ progress {
   content: "— ";
 }
 
+.custom-rounded {
+  border-radius: 20px; /* or any value you like */
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
