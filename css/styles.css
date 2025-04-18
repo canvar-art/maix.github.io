@@ -10,7 +10,35 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ @font-face {
+  font-family: 'HelveticaNeueThin';
+  src: url('../assets/fonts/HelveticaNeue-Thin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ @font-face {
+  font-family: 'HelveticaNeueBold';
+  src: url('../assets/fonts/HelveticaNeue-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ 
 :root {
+/*! Paleta Maix  */
+    --color-maix-primary: #CC9921;
+    --color-maix-secondary: #CC5A71;
+    --color-maix-tertiary: #80475E;
+    --color-maix-dark: #34344A;
+    --color-maix-white: #FFFFFF;
+    --color-maix-primary-rgb: 204, 153, 33;
+    --color-maix-secondary-rgb: 204, 90, 113;
+    --color-maix-tertiary-rgb: 128, 71, 94;
+    --color-maix-dark-rgb: 52, 52, 74;
+    --color-maix-white-rgb: 255, 255, 255;
+/*! */
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #7464a1;
@@ -61,7 +89,7 @@
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --bs-body-font-family: HelveticaNeueThin, Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
@@ -604,6 +632,10 @@ progress {
 }
 .blockquote-footer::before {
   content: "— ";
+}
+
+.custom-rounded {
+  border-radius: 20px; /* or any value you like */
 }
 
 .img-fluid {
@@ -2784,10 +2816,20 @@ textarea.form-control-lg {
   z-index: 4;
 }
 
+.neon-text {
+  color: #ff0080; /* Dark pink */
+  text-align: center;
+  font-weight: bold;
+  text-shadow:
+    0 0 2px #ff0080,
+    0 0 6px #ff1a8c,
+    0 0 12px #ff1a8c;
+}
+
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
-  --bs-btn-font-family: ;
+  --bs-btn-font-family: 'HelveticaNeueBold', sans-serif;
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
@@ -2864,10 +2906,10 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #cc9921;
-    --bs-btn-border-color: #cc9921;
+    --bs-btn-bg: var(--color-maix-secondary);
+    --bs-btn-border-color: var(--color-maix-secondary);
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #fd7e14;
+    --bs-btn-hover-bg: var(--color-maix-tertiary);
     --bs-btn-hover-border-color: #50817e;
     --bs-btn-focus-shadow-rgb: 123, 175, 172;
     --bs-btn-active-color: #fff;
@@ -2979,11 +3021,13 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #000;
   --bs-btn-disabled-bg: #f8f9fa;
   --bs-btn-disabled-border-color: #f8f9fa;
+  --bs-btn-font-size: 50%;
+  --bs-btn-font-weight:50%;
 }
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #212529;
+  --bs-btn-bg: #303b45;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #424649;
@@ -3708,9 +3752,9 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
+  font-size: 1.5rem;;
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  color: var(--color-maix-tertiary);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3720,7 +3764,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: var(--bs-nav-link-hover-color);
+  color: var(--color-maix-primary);
 }
 .nav-link.disabled {
   color: var(--bs-nav-link-disabled-color);
@@ -3813,15 +3857,16 @@ textarea.form-control-lg {
 }
 
 .navbar {
+  font-family: HelveticaNeue-Bold, sans-serif !important;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
-  --bs-navbar-color: rgba(0, 0, 0, 0.55);
+  --bs-navbar-color: rgb(0, 0, 0);
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-font-size: 2rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
@@ -3890,11 +3935,13 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: var(--bs-navbar-color);
+  
 }
 .navbar-text a,
 .navbar-text a:hover,
 .navbar-text a:focus {
   color: var(--bs-navbar-active-color);
+  
 }
 
 .navbar-collapse {
@@ -7748,7 +7795,6 @@ textarea.form-control-lg {
 }
 
 .my-auto {
-  margin-top: auto !important;
   margin-bottom: auto !important;
 }
 
@@ -8232,7 +8278,7 @@ textarea.form-control-lg {
 
 .text-dark {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--color-maix-tertiary-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-black {
@@ -8242,7 +8288,7 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--color-maix-white-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-body {
@@ -8257,12 +8303,12 @@ textarea.form-control-lg {
 
 .text-black-50 {
   --bs-text-opacity: 1;
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: rgba( 0, 0, 0, 0.5) !important;
 }
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(var(--color-maix-white-rgb), 0.8) !important;
 }
 
 .text-reset {
@@ -8329,6 +8375,27 @@ textarea.form-control-lg {
 .bg-black {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+
+
+.bg-maix-primary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--color-maix-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-maix-secondary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--color-maix-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-maix-tertiary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--color-maix-tertiary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-maix-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--color-maix-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-white {
@@ -11001,14 +11068,14 @@ body {
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #cc9921;
-  border: 1px solid #cc9921;
+  color: rgba(var(--color-maix-tertiary-rgb));
+  border: 1px solid rgba(var(--color-maix-tertiary-rgb));
 }
 #mainNav .navbar-toggler:focus {
   outline: none;
 }
 #mainNav .navbar-brand {
-  color: #000;
+  color: rgba(var(--color-maix-secondary-rgb),1);
   font-weight: 700;
   padding: 0.9rem 0;
 }
@@ -11031,27 +11098,29 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(var(--color-maix-tertiary-rgb),1);
+    font: "HelveticaNeue-Bold";
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(var(--color-maix-dark-rgb), 1);
   }
   #mainNav .nav-link:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(var(--color-maix-text-rgb),1);
+    font: "HelveticaNeue-Bold";
   }
   #mainNav .nav-link:active {
-    color: #fff;
+    color: rgba(var(--color-maix-primary-rgb),1);
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #000;
+    color: rgba(var(--color-maix-secondary-rgb),1));
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #000;
+    color: rgba(var(--color-maix-dark-rgb), 1);
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
@@ -11071,7 +11140,7 @@ body {
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'HelveticaNeueBold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -11126,16 +11195,41 @@ body {
   }
 }
 
+.about-section-gradient{
+  background: linear-gradient(0deg,rgba(204, 153, 33, 1) 0%, rgba(123, 77, 255, 1) 100%);
+}
+.prices-section {
+  padding-top: 5ch;
+  padding-bottom: 5rem;
+  
+}
 .about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  padding-top: 10ch;
+  padding-bottom: 1rem;
 }
 .about-section p {
   margin-bottom: 5rem;
 }
 
+.prices-section .card {
+  border: 0;
+  border-bottom: 0.25rem solid #cc9921;
+}
+.prices-section .card h4, .contact-section .card .h4 {
+  font-size: 0.8rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.prices-section .card hr {
+  opacity: 1;
+  border-color: #cc9921;
+  border-width: 0.25rem;
+  width: 3rem;
+}
+
 .projects-section {
-  padding: 10rem 0;
+  padding: 3rem 0;
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -11180,6 +11274,13 @@ body {
   width: 100%;
   height: 100%; /* or whatever height you need */
   overflow: hidden;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 #hero canvas {
@@ -11190,7 +11291,7 @@ body {
 }
 
 .contact-section {
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 .contact-section .card {
   border: 0;
@@ -11209,7 +11310,7 @@ body {
   width: 3rem;
 }
 .contact-section .social {
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 .contact-section .social a {
   text-align: center;
@@ -11228,5 +11329,5 @@ body {
 }
 
 .footer {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }

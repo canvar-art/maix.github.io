@@ -1,11 +1,23 @@
+let canvas;
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  noStroke();
-  noiseDetail(4, 0.5);
+  const parentElement = document.getElementById('hero'); // 👈 ID of the section
+  canvas = createCanvas(parentElement.offsetWidth, parentElement.offsetHeight);
+  canvas.parent('hero');
+  canvas.style('position', 'absolute');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
+  canvas.style('z-index', '-1');
+  background(20); // or anything you want
+  noStroke(); // disable stroke entirely
 }
 
+function windowResized() {
+  const parentElement = document.getElementById('hero');
+  resizeCanvas(parentElement.offsetWidth, parentElement.offsetHeight);
+}
 function draw() {
-  background(255,200,0);
+  background(151, 118, 195);
 
   let gridSize = 20;
   let t = millis() * 0.0005;
@@ -22,7 +34,7 @@ function draw() {
       let b = map(n, 0, 1, 100, 255);
 
       fill(r, g, b, 150);
-      let ellipseSize = map(n, 0, 1, 10, 35);
+      let ellipseSize = map(n, 0, 1, 10, 35,0);
       ellipse(x, y, ellipseSize, ellipseSize);
     }
   }
